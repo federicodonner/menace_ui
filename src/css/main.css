@@ -3,7 +3,7 @@ body {
 }
 
 .scrollable {
-  background-image: url("../images/fondo.jpg");
+  background-image: url("/images/fondo.jpg");
   background-repeat-y: no-repeat;
   background-repeat-x: no-repeat;
   background-size: contain;
@@ -90,14 +90,16 @@ a:active {
   position: absolute;
   top: 44vh;
   left: 28vw;
+  font-size: 16pt;
 }
 
 .yaxislabel {
   color: white;
   position: absolute;
   transform: rotate(270deg);
-  left: -11vw;
+  left: -14.5vw;
   top: 28vh;
+  font-size: 20pt;
 }
 
 .label {

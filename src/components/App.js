@@ -23,13 +23,18 @@ class App extends React.Component {
       fixedId: points.length,
       left: points[0].left + points.length * this.state.distanceX,
       top: points[points.length - 1].top - variation * this.state.distanceY,
-      color: 'ff0000'
+      color: "ff0000"
     };
     points.push(newPoint);
 
-    this.setState({
-      points
-    });
+    this.setState(
+      {
+        points
+      },
+      function() {
+        localStorage.setItem("menace_state", JSON.stringify(this.state));
+      }
+    );
 
     const results = this.state.results;
     switch (variation) {
@@ -111,6 +116,7 @@ class App extends React.Component {
     }
 
     this.setState({ points }, function() {
+      localStorage.setItem("menace_state", JSON.stringify(this.state));
       this.refresh();
     });
   };
@@ -167,6 +173,11 @@ class App extends React.Component {
     this.setState({
       refresh
     });
+
+    const previous = JSON.parse(localStorage.getItem("menace_state"));
+    if (previous) {
+      this.setState(previous);
+    }
   }
 
   render() {
