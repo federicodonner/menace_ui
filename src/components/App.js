@@ -23,7 +23,7 @@ class App extends React.Component {
       fixedId: points.length,
       left: points[0].left + points.length * this.state.distanceX,
       top: points[points.length - 1].top - variation * this.state.distanceY,
-      color: "ff0000"
+      color: "5bc500"
     };
     points.push(newPoint);
 
@@ -107,12 +107,12 @@ class App extends React.Component {
   rotateColor = event => {
     event.preventDefault();
     var points = this.state.points;
-    if (points[this.state.points.length - 1].color == "ff0000") {
-      points[this.state.points.length - 1].color = "00ff00";
-    } else if (points[this.state.points.length - 1].color == "00ff00") {
-      points[this.state.points.length - 1].color = "0000ff";
+    if (points[this.state.points.length - 1].color == "1300c9") {
+      points[this.state.points.length - 1].color = "fff000";
+    } else if (points[this.state.points.length - 1].color == "fff000") {
+      points[this.state.points.length - 1].color = "5bc500";
     } else {
-      points[this.state.points.length - 1].color = "ff0000";
+      points[this.state.points.length - 1].color = "1300c9";
     }
 
     this.setState({ points }, function() {
